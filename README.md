@@ -1,1 +1,3 @@
-# LucasAnderson_ViniciusNoleto-_ws_OS_RR_2023
+# Problema do Jantar dos Filósofos
+## Deadlock, starvation e semáforos
+### Lucas Anderson e Vinícius Nolêto
