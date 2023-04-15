@@ -35,7 +35,7 @@ void *philosopher(void *arg) {
         sem_post(&chopsticks[right]);  // devolve o hashi da direita
 
         printf("Filósofo %d: Pai tá cheião\n\n", id);
-        sleep(2);
+        sleep(1);
     }
 }
 
