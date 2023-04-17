@@ -26,17 +26,10 @@ void *philosopher(void *arg) {
 
         sem_wait(&mutex); 
         
-<<<<<<< HEAD
-        printf("Filósofo %d: Larica da desgraça meu parceiro\n\n", id);
-        sem_wait(&chopsticks[left]);  // pega o hashi da esquerda
-        sem_wait(&chopsticks[right]);  // pega o hashi da direita
-        printf("Filósofo %d: Vou pegar esses hashis %d e %d pra poder comer\n\n", id, left, right);
-=======
         printf("Filósofo %d: Ôh Larica meu parceiro\n\n", id);
         sem_wait(&chopsticks[left]);
         sem_wait(&chopsticks[right]);
         printf("Filósofo %d: Vou pegar esses hashis %d e %d para poder comer\n\n", id, left, right);
->>>>>>> bc9921d (Last version code)
         
         sem_post(&mutex); 
 
