@@ -1,3 +1,8 @@
+/** Para executar o programa digite os seguintes comandos no terminal
+* gcc -pthread philosophers_dinner.c -o philosophers_dinner
+* ./philosophers_dinner
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -17,22 +22,29 @@ void *philosopher(void *arg) {
 
     while(1){
         printf("Filósofo %d: O que é a vida?\n\n", id);
-        sleep(1);
+        //sleep(1);
 
-        sem_wait(&mutex);  // espera para entrar na mesa
+        sem_wait(&mutex); 
         
+<<<<<<< HEAD
         printf("Filósofo %d: Larica da desgraça meu parceiro\n\n", id);
         sem_wait(&chopsticks[left]);  // pega o hashi da esquerda
         sem_wait(&chopsticks[right]);  // pega o hashi da direita
         printf("Filósofo %d: Vou pegar esses hashis %d e %d pra poder comer\n\n", id, left, right);
+=======
+        printf("Filósofo %d: Ôh Larica meu parceiro\n\n", id);
+        sem_wait(&chopsticks[left]);
+        sem_wait(&chopsticks[right]);
+        printf("Filósofo %d: Vou pegar esses hashis %d e %d para poder comer\n\n", id, left, right);
+>>>>>>> bc9921d (Last version code)
         
-        sem_post(&mutex);  // libera o acesso à mesa
+        sem_post(&mutex); 
 
         printf("Filósofo %d: Lamen de cria slk\n\n", id);
         sleep(1);
 
-        sem_post(&chopsticks[left]);  // devolve o hashi da esquerda
-        sem_post(&chopsticks[right]);  // devolve o hashi da direita
+        sem_post(&chopsticks[left]);  
+        sem_post(&chopsticks[right]); 
 
         printf("Filósofo %d: Pai tá cheião, vou largar esses hashis  %d e %d\n\n", id, left, right);
         sleep(1);
@@ -45,9 +57,9 @@ int main() {
     pthread_t philo_thread[N];
     int id[N];
 
-    sem_init(&mutex, 0, 1);  // mutex inicializado com 1
+    sem_init(&mutex, 0, 1);
     for (i = 0; i < N; i++) {
-        sem_init(&chopsticks[i], 0, 1);  // hashis inicializados com 1
+        sem_init(&chopsticks[i], 0, 1); 
     }
 
     for (i = 0; i < N; i++) {
@@ -61,3 +73,4 @@ int main() {
 
     return 0;
 }
+
